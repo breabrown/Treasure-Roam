@@ -7,6 +7,7 @@ class Treasure(models.Model):
     x_coordinate = models.FloatField()
     y_coordinate = models.FloatField()
     notes = models.TextField()
-    placed_by = models.ForeignKey('auth.User', on_delete=models.CASCADE, null=True, blank=True)
+    placed_by = models.ForeignKey('users.CustomUser', on_delete=models.CASCADE, null=True, blank=True)
     date_created = models.DateTimeField(auto_now_add=True)
     last_visit = models.DateTimeField(auto_now_add=True)
+    new = models.BooleanField()

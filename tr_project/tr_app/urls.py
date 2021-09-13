@@ -1,8 +1,12 @@
-from django.contrib import admin
-from django.urls import path, include
+from django.urls import path
+
+from . import views
+
+app_name = 'tr_app'
 
 urlpatterns = [
     # path('admin/', admin.site.urls),
-    # path('', include('tr_app.urls')),
+    path('', views.index, name='home'),
+    path('geomap/', views.map, name='map'),
 
 ]
