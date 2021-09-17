@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Signup for Treasure Roam!</h1>
+    <span><h1>Signup for Treasure Roam!</h1>
     <form action="" method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <input type="submit" value="Sign Up">
+        <input type="submit" value="Sign Up"></span>
     </form>
 
 {% endblock content %}

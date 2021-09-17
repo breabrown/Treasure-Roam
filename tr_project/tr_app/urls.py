@@ -8,5 +8,6 @@ urlpatterns = [
     # path('admin/', admin.site.urls),
     path('', views.index, name='home'),
     path('geomap/', views.map, name='map'),
+    path('profile', views.profile, name='profile'),
 
 ]

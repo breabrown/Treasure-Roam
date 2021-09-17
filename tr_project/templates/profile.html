@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Welcome, {{ user.username }}<h1>
+<form method="POST" action="{% url 'tr_app:profile' %}">
+{% csrf_token %}
+  <label for="lat">Latitude:</label><br>
+  <input type="number" id="lat" name="lat"><br>
+  <label for="long">Longitude:</label><br>
+  <input type="number" id="long" name="long"><br>
+<textarea name="comments" id="comments" style="font-family:sans-serif;font-size:1.2em;">
+Say something about this geocache!
+</textarea>
+  <button type="submit">Add Treasure Location</button>
+</form>
+{% for treasure in treasures %}
+<li>{{ treasure.notes }}</li>
+{% endfor %}
+
+{% endblock content %}

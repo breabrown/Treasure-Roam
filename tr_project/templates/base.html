@@ -10,17 +10,42 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
    crossorigin=""/>
-    <!-- Make sure you put this AFTER Leaflet's CSS -->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
    crossorigin=""></script>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Playfair+Display&display=swap" rel="stylesheet">
+
 </head>
 <body>
-{% block content %}
 
+
+<nav class="navbar">
+    <div class="title"><a href="{% url 'tr_app:home' %}" class="site-logo">Treasure Roam</a></div>
+    <a href="#" class="toggle-button">
+        <span class="bar"></span> 
+        <span class="bar"></span> 
+        <span class="bar"></span>
+    </a>
+    <div class="navbar-links">
+        <ul>
+            <li><a href="{% url 'tr_app:home' %}">Home</a></li>
+            <li><a href="#">My Treasures</a></li>
+            <li><a href="{% url 'login' %}">Login</a></li>
+            <li><a href="{% url 'users:signup' %}">Sign-up</a></li>        
+        </ul>
+    </div>
+</nav>
+
+
+{% block content %}
 
 
 {% endblock content %}
     
+<script src="{% static 'js/scripts.js' %}"></script>
+<script src="{% static 'js/secrets.js' %}"></script>
+
 </body>
 </html>
